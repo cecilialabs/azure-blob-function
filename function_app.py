@@ -17,5 +17,3 @@ def blob_trigger_function(myblob: func.InputStream):
 
     content = myblob.read()
     logging.info(f"Content preview: {content[:200]}")
-
-    # Processing logic goes here
