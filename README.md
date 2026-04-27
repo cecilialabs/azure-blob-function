@@ -4,7 +4,7 @@ This is my first ever Azure project and honestly what a way to start. 📈
 
 It's a serverless Python function that automatically fires whenever a file gets uploaded to Azure Blob Storage. No manual triggers, no polling in a loop, just drop a file and the cloud does the work.
 
-I built this to get my hands dirty with cloud architecture for the first time and understand how event-driven, serverless systems actually work in practice. Cloud computing clicked for me in a whole new way after this one.
+I built this to get my hands dirty with cloud architecture for the first time and understand how event-driven, serverless systems actually work in practice. After this, my understanding of cloud computing reached a new level.
 
 ---
 
@@ -123,13 +123,29 @@ def BlobTriggerFunction(myblob: func.InputStream):
 
 ## What I learned building this
 
-This being my first Azure project, a lot was new to me and I picked up more than I expected:
+**Cloud Architecture & Azure**
+- Event-driven architecture isn't just theory, it's a practical pattern that eliminates polling and simplifies workflows
+- Serverless means you truly stop thinking about infrastructure and focus only on business logic
+- Azure Functions v2 Python model is clean and intuitive once you understand decorators and bindings
+- Blob Storage triggers are powerful for building reactive systems that respond to file events
 
-- What event-driven architecture actually means in practice, not just as a concept
-- How serverless removes the infrastructure layer entirely and lets you just focus on logic
-- The Azure Functions v2 Python programming model and how triggers and bindings work
-- How to emulate cloud services locally with Azurite so you're not deploying every single change to test it
-- How to structure a cloud project properly from the start: config, secrets management, deployment
+**Development & Debugging**
+- Local development with Azurite is crucial! test everything before deploying to real Azure
+- Understanding TCP ports, process management and system level debugging (lsof, kill commands)
+- How to troubleshoot cloud tools - permissions issues, connection strings, environment paths
+- The importance of clear `.gitignore` files to protect secrets and local-only files
+
+**Professional Workflow**
+- Proper Git workflow with meaningful commit messages that tell the story of development
+- Structuring a cloud project correctly from the start - config files, secrets management, clean dependencies
+- Writing documentation that's honest and helps others (and future me) understand the project
+- Setting up local development environments for cloud tools requires careful project structure
+
+**Problem-Solving**
+- Renaming `function.py` to `function_app.py` - learning that Azure Functions has specific file naming requirements
+- Fixing permission issues with Homebrew and global package installations
+- Understanding how file paths affect local development and Azure tooling
+- Reading verbose logs to understand what's actually happening under the hood
 
 First project down. Many more to come.
 
